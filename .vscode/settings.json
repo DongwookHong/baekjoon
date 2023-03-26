@@ -1,5 +1,12 @@
 {
     "files.associations": {
-        "이분그래프판별.C": "cpp"
+        "이분그래프판별.C": "cpp",
+        "chrono": "c",
+        "limits": "c",
+        "ratio": "c",
+        "algorithm": "c",
+        "__bit_reference": "c",
+        "bitset": "c",
+        "unordered_map": "c"
     }
 }
