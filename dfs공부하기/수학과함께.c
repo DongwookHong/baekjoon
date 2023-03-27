@@ -12,22 +12,23 @@ int dx[4]={0,1};
 int dy[4]={1,0};
 
 
-void dfs(int st, int end, int k)
+void dfs(int st, int end, int *k)
 {
   
      if(end == N -1&& st ==N-1){
-            if((k) <min)
-                min =(k);
+            if((*k) <min)
+                min =(*k);
                 
-            if((k) > large)
-                large =(k);
+            if((*k) > large)
+                large =(*k);
             return ;     
     }
+
     for(int i =0; i<2 ;i++)
     {
         int x = st+dx[i];
         int y= end+dy[i];
-        int cnt = k;
+        int cnt = (*k);
      
         if( x<0 ||y <0 || x>=N || y>=N)
             continue;
@@ -37,14 +38,14 @@ void dfs(int st, int end, int k)
             (cnt) -= (sum[x][y] - '0');
         else if(sum[st][end] == '*')
             (cnt) *= (sum[x][y] - '0');
-        dfs(x,y,cnt);
+        dfs(x,y,&cnt);
     }
     
 }
 
 int main()
 { 
-    freopen("input.txt", "r", stdin);
+    // freopen("input.txt", "r", stdin);
     scanf("%d", &N);
    
     for(int i =0; i<N; i++)
@@ -56,6 +57,6 @@ int main()
     }
    int cnt =sum[0][0] - '0';
    
-    dfs(0,0, cnt);
+    dfs(0,0, &cnt);
     printf("%d %d", large , min);
 }
