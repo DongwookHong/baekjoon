@@ -6,6 +6,7 @@ const int dy[] = { 0, 0, 1, -1 };
 int N, M, ans;
 int map[MAX_NM][MAX_NM];
 int visited[MAX_NM][MAX_NM];
+
 void Flood_Fill(int x, int y, int v) {
     visited[x][y] = v;
     int waterCnt = 0;
