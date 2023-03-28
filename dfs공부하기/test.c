@@ -6,7 +6,6 @@ const int dy[] = { 0, 0, 1, -1 };
 int N, M, ans;
 int map[MAX_NM][MAX_NM];
 int visited[MAX_NM][MAX_NM];
-
 void Flood_Fill(int x, int y, int v) {
     visited[x][y] = v;
     int waterCnt = 0;
@@ -45,7 +44,7 @@ int findSection(void) {
     }
 }
 int main(void) {
-    // freopen("input.txt", "r", stdin);
+    freopen("input.txt", "r", stdin);
     scanf("%d %d", &N, &M);
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
