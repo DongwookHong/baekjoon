@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define max 305
+#define max 310
 int width, height;
 
 int ice[max][max];
@@ -68,5 +68,5 @@ int main()
         }
     }
     ans = iceberg();
-    printf("%d\n", ans);
+    printf("%d", ans);
 }
