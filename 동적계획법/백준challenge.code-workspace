@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "../../백준challenge"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"이분그래프판별.C": "cpp",
+			"chrono": "c",
+			"limits": "c",
+			"ratio": "c",
+			"algorithm": "c",
+			"__bit_reference": "c",
+			"bitset": "c",
+			"unordered_map": "c",
+			"__hash_table": "c",
+			"__split_buffer": "c",
+			"array": "c",
+			"initializer_list": "c",
+			"ios": "c",
+			"string": "c",
+			"string_view": "c",
+			"vector": "c"
+		}
+	}
+}
