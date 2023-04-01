@@ -20,13 +20,14 @@ int main(){
     {
     
         del[i] = del[i-5]+1;
-        if(del[i] == 0)
-            del[i] = del[i-3]+1;
+        if(del[i]==0)
+           del[i]=del[i-3]+1;
         if(i%5 == 0)
-            del[i]=min(del[i],del[i]/5);
+            del[i]=min(del[i],i/5);
         if(i%3 == 0)
-            del[i]=min(del[i],del[i]/3);
+            del[i]=min(del[i],i/3);
        
     }
+     
     printf("%d",del[candy]);
 }
