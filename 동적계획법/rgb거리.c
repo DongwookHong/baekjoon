@@ -3,10 +3,11 @@
 int arr[3];
 int dp[3];
 int dp2[3];
-int Min(int a, int b)
-{
-	return a < b ? a : b;
-}
+#define Min(a,b) (a)>(b)? (b):(a)
+// int Min(int a, int b)
+// {
+// 	return a < b ? a : b;
+// }
 void distance_RGB(int N)
 {
     freopen("input.txt","r",stdin);
