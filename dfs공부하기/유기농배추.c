@@ -1,53 +1,67 @@
 #include <stdio.h>
-#define max 51
+#define max 55
+int m,n,k;
 
-int M,N;
 int square[max][max];
 
 int dx[4] = {-1,1,0,0};
 int dy[4] = {0,0,-1,1};
 
-
-void bfs(int a,int b)
+void bfs(int st, int end)
 {
-    square[a][b]==0;
-   
+    square[st][end] =0;
+
     for(int i=0; i<4; i++)
     {
-        int x = a+ dx[i];
-        int y = b+ dy[i];
-        if(x>=0 && x<M && y>=0 && y< N && square[x][y]  ==1)
-            bfs(x,y);     
+        int x = dx[i]+st;
+        int y= dy[i]+end;
+
+        if(x<0||y<0 || x>=n|| y>=m)
+            continue;
+        if(square[x][y] ==1)
+            bfs(x,y);
     }
 }
-int main()
-{
-    int test;
-    scanf("%d" , &test);
-    int k;
-    for(int i =0; i < test; i++)
-    {
-        scanf("%d %d %d", &M,&N,&k );
 
-        for(int j =0; j < k;j++)
+void toss(){
+    freopen("input.txt","r",stdin);
+    int num;
+
+    scanf("%d", &num);
+
+    
+
+    int a,b;
+    int cnt;
+    for(int j =0; j <num; j++)
+    {
+        
+        scanf("%d %d %d", &n ,&m,&k);
+       
+        a=0; b=0; cnt =0;
+        for(int i = 0; i<k;i++)
         {
-            int a,b;
-            scanf("%d %d", &a,&b);
-            square[a][b]=1;
+            scanf("%d %d",&a,&b);
+            square[a][b] =1;
         }
-        int cnt =0;
-        for(int k =0; k < M; k++)
+       
+        for(int i =0; i<n;i++)
         {
-            for(int y= 0; y <N; y++)
+            for(int d =0; d<m; d++)
             {
-                if(square[k][y]==1)
+                if(square[i][d]==1)
                 {
-                    bfs(k,y);
+                    bfs(i,d);
                     cnt++;
                 }
             }
         }
-        printf("%d",cnt);
+        printf("%d\n",cnt);
     }
 
+}
+
+
+int main(){
+    toss();
 }
